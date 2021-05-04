@@ -6,6 +6,7 @@ services:
       - nix-shell
       - --run
       - 'cd plutus-playground-client && plutus-playground-server'    
+    restart: always
     ports:
       - '8080:8080'
   client:
@@ -16,6 +17,7 @@ services:
       - 'cd plutus-playground-client && npm run start'    
     depends_on:
       - server
+    restart: always
     ports:
       - '8009:8009'
     links:
