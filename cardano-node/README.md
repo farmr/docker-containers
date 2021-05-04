@@ -11,14 +11,14 @@ Note: Make sure to `export HOME=/home/farmrone` so that it can be resolved corre
 
 The following command will run the container in this configuration:
 ``` bash
-docker run https://hub.docker.com/r/farmrone/cardano-node:latest
+docker run farmrone/cardano-node:latest
 ```
 
 ## Alternate configuration (block producing node)
 Below is an example on overriding the default CMD arguments to run cardano-node 
 as a block producing node:
 ``` bash
-docker run https://hub.docker.com/r/farmrone/cardano-node:latest \
+docker run farmrone/cardano-node:latest \
     run \
     --database-path $HOME/cardano-node/db/ \
     --socket-path $HOME/cardano-node/db/node.socket \
@@ -34,7 +34,7 @@ docker run https://hub.docker.com/r/farmrone/cardano-node:latest \
 Below is an example on overriding the default CMD arguments to run cardano-node 
 as a relay node:
 ``` bash
-docker run https://hub.docker.com/r/farmrone/cardano-node:latest \
+docker run farmrone/cardano-node:latest \
     run \
     --database-path $HOME/cardano-node/db/ \
     --socket-path $HOME/cardano-node/db/node.socket \
@@ -50,5 +50,5 @@ shell. This configuration boots the container into a shell so that the user
 can interact with the container and run any desired commands. Use this for
 debugging:
 ``` bash
-docker run -it --entrypoint /usr/bin/zsh https://hub.docker.com/r/farmrone/cardano-node:latest
+docker run -it --entrypoint /usr/bin/zsh cardano-node:latest
 ```
