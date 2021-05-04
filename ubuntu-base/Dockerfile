@@ -4,8 +4,7 @@ LABEL maintainer="FARMR Stakepool operators (support@farmr.one)"
 # Update and install the required packages
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
- && apt-get install -y \
-    zsh \
+ && apt-get install -y \    
     wget \
     git \
     npm \
@@ -22,12 +21,7 @@ ARG GROUPID="1024"
 RUN groupadd -g $GROUPID -r $USERNAME \
  && useradd --no-log-init -r --gid $GROUPID -u $USERID $USERNAME \
  && mkdir /home/$USERNAME
-COPY ./zshrc /home/${USERNAME}/.zshrc
 RUN chown -R ${USERNAME}:${USERNAME} /home/${USERNAME} \
  && chown -R ${USERNAME}:${USERNAME} /usr/local \
- && echo ${USERNAME}:${USERNAME} | chpasswd \
- && chsh -s /usr/bin/zsh ${USERNAME}
+ && echo ${USERNAME}:${USERNAME} | chpasswd 
 USER ${USERNAME}
-
-# Install and setup environment for default user
-RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
