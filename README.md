@@ -11,7 +11,7 @@ prometheus.
 
 See more information [here](./cardano-node/README.md).
 
-## Plutus-playground
+## Plutus-Playground
 
  The Plutus Playground is an online IDE that enables users to easily write and
 simulate Plutus Applications.
