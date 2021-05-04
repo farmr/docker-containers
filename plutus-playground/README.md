@@ -30,3 +30,11 @@ The `start` script will:
 - Start the webkpack server
 
 Once the `start` script completes you can access the frontend via [http://localhost:8009](http://localhost:8009)
+
+## Starting the Plutus playground with docker-compose
+
+From the plutus-playground folder :
+
+```bash
+$ docker-compose up
+```
